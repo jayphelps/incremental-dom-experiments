@@ -13,18 +13,13 @@ module.exports = {
   module: {
     loaders: [
       {
-        test   : /\.jsx?$/,
-        exclude: /(node_modules|bower_components)/,
-        loader : 'babel-loader'
-      },
-      {
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+        test   : /\.(js|jsx)?$/,
+        exclude: /node_modules/,
+        loader : 'babel'
       }
     ]
   },
   plugins: [
-    new ExtractTextPlugin('main.css'),
     new HtmlWebpackPlugin({
       title   : 'prezmeplease',
       template: '_index.html'
